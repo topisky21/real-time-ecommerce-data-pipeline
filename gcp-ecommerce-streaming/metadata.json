@@ -1,0 +1,23 @@
+{
+  "name": "E-commerce Real-Time Streaming Pipeline",
+  "description": "Streams e-commerce orders from Pub/Sub to BigQuery using Apache Beam and Dataflow.",
+  "streaming": true,
+  "parameters": [
+    {
+      "name": "input_subscription",
+      "label": "Pub/Sub input subscription",
+      "helpText": "Full Pub/Sub subscription path.",
+      "regexes": [
+        "projects/[^/]+/subscriptions/[a-zA-Z][-_.~+%a-zA-Z0-9]{2,}"
+      ]
+    },
+    {
+      "name": "output_table",
+      "label": "BigQuery output table",
+      "helpText": "BigQuery table in project:dataset.table format.",
+      "regexes": [
+        "([^:]+:)?[^.]+[.].+"
+      ]
+    }
+  ]
+}
